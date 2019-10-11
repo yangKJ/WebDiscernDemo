@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+
+<head>
+    <title>网页测试</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    
+    <h2 style="text-align:center">Welcome To You</h2>
+    
+    <!--图片-->
+    <p style="text-align:center"> <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1570783608105&di=da383f0e207bb5a831647d6de8a3e359&imgtype=0&src=http%3A%2F%2Fphotocdn.sohu.com%2F20120625%2FImg346436473.jpg" id= "pictureId2" width="320" height="190" align="middle" /> </p>
+    <p style="text-align:center"> <img src="https://upload-images.jianshu.io/upload_images/1933747-2e51515ae91af6d4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" id= "pictureId" width="320" height="170" align="middle" /> </p>
+    
+    <p style="text-align:center"> <a href="https://www.jianshu.com/u/c84c00476ab6">简书主页</a> </p>
+    <p style="text-align:center;background-color:#e6b500"> <button id="btn1" type = "button" onclick = "clickxx()" >  Welcome To You </p>
+    
+    <!--JS语法-->
+    <script type = "text/javascript">
+    //图片点击事件
+    function clickxx(){
+        alert("Welcome To You");
+        <!--window.webkit.messageHandlers.clickImage.postMessage({"params":"我是参数"});-->
+    }
+    
+    //OC调用JS改变背景色
+    function changeColor(){
+        document.body.style.backgroundColor = randomColor();
+    }
+    
+    //随机生成颜色
+    function randomColor(){
+        var r=Math.floor(Math.random()*256);
+        var g=Math.floor(Math.random()*256);
+        var b=Math.floor(Math.random()*256);
+        return "rgb("+r+','+g+','+b+")";//所有方法的拼接都可以用ES6新特性`其他字符串{$变量名}`替换
+    }
+    
+    </script>
+    
+</body>
+
+</html>

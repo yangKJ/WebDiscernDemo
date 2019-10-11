@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7Fy-Ap-emd">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QoS-ps-MR3">
+                                <rect key="frame" x="168.66666666666666" y="144" width="77" height="30"/>
+                                <state key="normal" title="跳转到网页"/>
+                                <connections>
+                                    <action selector="thouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gvO-mA-uxr"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZFK-QQ-gGT">
+                                <rect key="frame" x="10" y="332" width="394" height="394"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ZFK-QQ-gGT" secondAttribute="height" multiplier="1:1" id="9W5-wH-ei1"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="显示网页长按获取到的图片" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YkL-TB-e6N">
+                                <rect key="frame" x="103" y="301" width="208" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="QoS-ps-MR3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0GS-oT-mbE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZFK-QQ-gGT" secondAttribute="trailing" constant="10" id="FJ7-Uo-Vcq"/>
+                            <constraint firstItem="QoS-ps-MR3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="YJJ-nY-VxR"/>
+                            <constraint firstItem="ZFK-QQ-gGT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="dsE-qo-chT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZFK-QQ-gGT" secondAttribute="bottom" constant="10" id="kGh-67-Adq"/>
+                            <constraint firstItem="ZFK-QQ-gGT" firstAttribute="top" secondItem="YkL-TB-e6N" secondAttribute="bottom" constant="10" id="nDE-yc-29U"/>
+                            <constraint firstItem="YkL-TB-e6N" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wdN-vu-Rwz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Xex-LU-Ob2"/>
+                    <connections>
+                        <outlet property="imageView" destination="ZFK-QQ-gGT" id="4fX-J1-xfE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="921.73913043478262" y="99.456521739130437"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="NWT-7P-QWO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7Fy-Ap-emd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HN9-aP-5AV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Xjl-My-a7l"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y5E-UU-8Ql" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="100.2717391304348"/>
+        </scene>
+    </scenes>
+</document>
