@@ -51,11 +51,6 @@ static KJWebDiscernTool *kj_tool = nil;
 - (void)handleLongPress:(UILongPressGestureRecognizer *)sender{
     if (sender.state != UIGestureRecognizerStateBegan) return;
     CGPoint touchPoint = [sender locationInView:self.saveWebView];
-//    UIImage *image = [self kj_getWebImageWithTouchPoint:touchPoint];
-//    if (self.currentImage == nil || self.currentImage != image) {
-//        self.currentImage = image;
-//    }
-//    _xxblock(self.currentImage);
     __weak typeof(self) weakself = self;
     // 获取长按位置对应的图片url的JS代码
     NSString *imgJS = [NSString stringWithFormat:@"document.elementFromPoint(%f,%f).src", touchPoint.x, touchPoint.y];
@@ -67,24 +62,6 @@ static KJWebDiscernTool *kj_tool = nil;
         }
         _xxblock(weakself.currentImage);
     }];
-}
-
-/// 用工厂方法如何return block里的值 - 同步处理
-- (UIImage*)kj_getWebImageWithTouchPoint:(CGPoint)touchPoint{
-    dispatch_semaphore_t signal = dispatch_semaphore_create(1);// 创建信号量
-    __block UIImage *image = NULL;
-    // 获取长按位置对应的图片url的JS代码
-    NSString *imgJS = [NSString stringWithFormat:@"document.elementFromPoint(%f,%f).src", touchPoint.x, touchPoint.y];
-    // 执行对应的JS代码 获取url
-    [self.saveWebView evaluateJavaScript:imgJS completionHandler:^(id _Nullable imgUrl, NSError * _Nullable error) {
-        if (imgUrl) {
-            NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:imgUrl]];
-            image = [UIImage imageWithData:data];
-        }
-        dispatch_semaphore_signal(signal);// 发送信号量
-    }];
-    dispatch_semaphore_wait(signal, DISPATCH_TIME_FOREVER);// 等待信号量
-    return image;
 }
 
 #pragma mark - UIGestureRecognizerDelegate

@@ -24,6 +24,7 @@
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZFK-QQ-gGT">
                                 <rect key="frame" x="10" y="332" width="394" height="394"/>
+                                <color key="backgroundColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ZFK-QQ-gGT" secondAttribute="height" multiplier="1:1" id="9W5-wH-ei1"/>
                                 </constraints>
