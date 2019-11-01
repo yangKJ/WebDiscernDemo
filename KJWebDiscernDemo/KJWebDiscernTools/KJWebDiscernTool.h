@@ -8,8 +8,10 @@
 
 /*
  - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
-     // 不执行前段界面弹出列表的JS代码
-     [self.webView evaluateJavaScript:@"document.documentElement.style.webkitTouchCallout='none';" completionHandler:nil];
+     /// 禁止弹出菜单
+     [webView evaluateJavaScript:@"document.documentElement.style.webkitTouchCallout = 'none';" completionHandler:nil];
+     // 禁止选中 - 禁止用户复制粘贴
+     [webView evaluateJavaScript:@"document.documentElement.style.webkitUserSelect = 'none';" completionHandler:nil];
  }
  */
 

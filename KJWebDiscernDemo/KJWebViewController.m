@@ -119,6 +119,10 @@
 // 页面加载完成之后调用
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
     [self getCookie];
+    /// 禁止弹出菜单
+    [webView evaluateJavaScript:@"document.documentElement.style.webkitTouchCallout = 'none';" completionHandler:nil];
+    // 禁止选中 - 禁止用户复制粘贴
+    [webView evaluateJavaScript:@"document.documentElement.style.webkitUserSelect = 'none';" completionHandler:nil];
 }
     
 //提交发生错误时调用
